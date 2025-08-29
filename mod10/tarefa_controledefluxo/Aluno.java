@@ -38,11 +38,26 @@ public class Aluno {
         return soma / this.notas.length;
     }
 
+    public String verificarSituacao() {
+        double media = calcularMedia();
+
+        if (media >= 7.0) {
+            return "Aprovado";
+        } else if (media >= 5.0) {
+            return "Em Recuperação";
+        } else {
+            return "Reprovado";
+        }
+    }
+
+
     public void imprimirMedia() {
         double media = calcularMedia();
-        System.out.println("\n--- Resultado ---");
-        System.out.println("Calculando a média das notas...");
-        System.out.printf("A média final do aluno é: %.2f\n", media);
+        String situacao = verificarSituacao();
+
+        System.out.println("\n--- Boletim Final ---");
+        System.out.printf("Média final do aluno: %.2f\n", media);
+        System.out.println("Situação: " + situacao);
     }
 }
 
