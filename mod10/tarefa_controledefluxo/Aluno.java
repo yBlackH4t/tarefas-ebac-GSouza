@@ -7,6 +7,7 @@ public class Aluno {
     private double[] notas;
 
     public Aluno(int quantidadeNotas) {
+
         this.notas = new double[4];
     }
 
